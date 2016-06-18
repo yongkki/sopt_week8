@@ -4,14 +4,16 @@ var router = express.Router();
 
 
 var connection = mysql.createConnection({
-  'host' : 'sopt.chkqolnlcrw1.ap-northeast-2.rds.amazonaws.com:3306',
+  'host' : 'sopt.chkqolnlcrw1.ap-northeast-2.rds.amazonaws.com',
+  'port' : '3306',
   'user' : 'user',
   'password' : 'dyd06812',
-  'database' : 'sopt';
+  'database' : 'sopt'
 });
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  connection.query('select id, title, timestamp form board '+' order by timestamp desc;', function(error, cursor){
+  connection.query('select id, title, timestamp from board '+' order by timestamp desc;', function(error, cursor){
+    console.log(error,cursor);
     res.json(cursor);
   });
 });
