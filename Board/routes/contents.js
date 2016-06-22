@@ -4,11 +4,11 @@ var router = express.Router();
 
 
 var connection = mysql.createConnection({
-  'host' : 'sopt.chkqolnlcrw1.ap-northeast-2.rds.amazonaws.com',
-  'port' : '3306',
-  'user' : 'user',
-  'password' : 'dyd06812',
-  'database' : 'sopt'
+  'host' : '',
+  'port' : '',
+  'user' : '',
+  'password' : '',
+  'database' : ''
 });
 /* GET home page. */
 router.get('/:content_id', function(req, res, next) {
